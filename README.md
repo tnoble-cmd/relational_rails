@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Mod 2 Project
 
-Things you may want to cover:
+### Learning Goals:
 
-* Ruby version
+* Design a one-to-many relationship using a schema designer.
 
-* System dependencies
+* Write migrations to create tables with columns of varying data types and foreign keys.
 
-* Configuration
+* Use Rails to create web pages that allow users to CRUD resources.
 
-* Database creation
+* Create instance and class methods on a Rails model that use ActiveRecord methods and helpers.
 
-* Database initialization
+* Write model and feature tests that fully cover data logic and user behavior.
 
-* How to run the test suite
+### Requierments: 
 
-* Services (job queues, cache servers, search engines, etc.)
+* Rails 7.1.x, Ruby version: 3.2.2
 
-* Deployment instructions
+* System dependencies: Run $bundle install in the terminal to install required Gems.
 
-* ...
+* Database: "PostgreSQL"
+
+
