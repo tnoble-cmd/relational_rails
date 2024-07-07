@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+#User Story 1
+
 RSpec.describe 'Artists Index Page' do
     
     it 'User can see all artists on the page' do 

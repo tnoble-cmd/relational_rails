@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+#User Story 2
+
 RSpec.describe 'Artists show' do 
     it 'Goes to the correct artist with ID' do 
         artist_1 = Artist.create(name: "Metallica", is_touring: true, years_active: 15)
