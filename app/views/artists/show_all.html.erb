@@ -1,0 +1,18 @@
+<h1><%=@artists.name%></h1>
+
+<h3>Songs by: <%= @artists.name %></h3>
+<ol>
+    <% @songs.each do |songs| %>
+      <li>
+        <p>Song Name: <%= songs.name %> </p>
+        <ul>
+            <li>Song Length: <%= songs.length %></li>
+            <li>Released as a single?: <%=songs.is_single %></li>
+            <li>Artist: <%= songs.artist.name %></li>
+            <li>Created: <%= songs.created_at %></li>
+            <li>Updated: <%= songs.updated_at %></li>
+        </ul>
+      </li>
+    <%end%>
+</ol>
+
