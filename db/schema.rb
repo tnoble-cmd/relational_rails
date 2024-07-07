@@ -26,11 +26,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_03_200017) do
     t.string "name"
     t.integer "length"
     t.boolean "is_single"
-    t.bigint "artists_id"
+    t.bigint "artist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["artists_id"], name: "index_songs_on_artists_id"
+    t.index ["artist_id"], name: "index_songs_on_artist_id"
   end
 
-  add_foreign_key "songs", "artists", column: "artists_id"
+  add_foreign_key "songs", "artists"
 end
