@@ -41,4 +41,17 @@ RSpec.describe 'Artists show' do
         visit "/artists/#{artist_2.id}"
         expect(page).to have_selector('h1', text: 'AC/DC')
     end
+
+    #User Story 7
+    it 'Displays the count of childeren associated with the artist' do
+        artist_1 = Artist.create(name: "Metallica", is_touring: true, years_active: 15)
+
+        song_1 = Song.create(name: "Enter Sandman", length: 310, is_single: false, artist_id: artist_1.id)
+        song_3 = Song.create(name: "ONE", length: 405, is_single: false, artist_id: artist_1.id)
+
+        visit '/artists/1'
+
+        expect(artist_1.songs.count).to eq(2)
+        expect(page).to have_content("Number of Songs: 2")
+    end
 end
