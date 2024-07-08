@@ -14,15 +14,14 @@ class ArtistsController < ApplicationController
     end
 
     def new
-        @artists = Artist.new
+        
     end
 
     def create
         @artists = Artist.new({name: params[:artist][:name], is_touring: params[:artist][:is_touring], years_active: params[:artist][:years_active]})
-        if @artists.save
-            redirect_to "/artists"
-        else
-            render :new
-        end
+
+        @artists.save
+        
+        redirect_to "/artists"
     end
 end
