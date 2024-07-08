@@ -1,17 +1,14 @@
 <h1>Add a new artist</h1>
 
-<form action = "/artists" method = "post">
-    <input type = "hidden" name = "authenticity_token" value = "<%= form_authenticity_token%>"> 
-    <label for = "artist_name">Artist Name:</label>
-    <input type = "text" id = "artist_name" name = "artist[name]"><br>
-    
-    <label for="artist_is_touring">Is Touring?</label>
-    <select id="artist_is_touring" name="artist[is_touring]"><br>
-        <option value="true">Yes</option>
-        <option value="false">No</option>
-    </select><br>
+<%=form_with url: "/artists", method: :post, data: {turbo: false } do |form| %>
+    <%= form.label :name, "Artist Name:" %>
+    <%= form.text_field :name%>
 
-    <label for="artist_years_active">Years Active:</label>
-    <input type="number" id="artist_years_active" name="artist[years_active]"><br>
-    <input type="submit" value="Create Artist">
-</form>  
+    <%= form.label :is_touring, "Is Touring?" %>
+    <%= form.select :is_touring, [["Yes", true], ["No", false]] %> 
+
+    <%= form.label :years_active, "Years Active:" %>
+    <%= form.number_field :years_active %>
+
+    <%= form.submit "Create Artist" %>
+<% end %>

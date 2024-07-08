@@ -18,10 +18,15 @@ class ArtistsController < ApplicationController
     end
 
     def create
-        @artists = Artist.new({name: params[:artist][:name], is_touring: params[:artist][:is_touring], years_active: params[:artist][:years_active]})
+        @artists = Artist.create(artist_params)
 
         @artists.save
         
         redirect_to "/artists"
+    end
+
+    private
+    def artist_params
+        params.require(:artist).permit(:name, :is_touring, :years_active)
     end
 end
