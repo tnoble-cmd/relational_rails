@@ -1,5 +1,7 @@
 <h1> All Songs </h1>
 
+<a href = "/artists">Artist Index</a>
+
 <% @songs.each do |song| %>
   <h2>title : <%= song.name %></h2>
   <p>duration (in seconds): <%= song.length %></p>
