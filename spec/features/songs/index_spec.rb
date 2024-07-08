@@ -24,5 +24,4 @@ RSpec.describe 'Songs Index Page' do
 
         expect(page).to have_selector('h1', text: "All Songs")
     end
-
 end
