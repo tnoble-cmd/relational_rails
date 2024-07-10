@@ -11,6 +11,8 @@ RSpec.describe 'Artists Index Page' do
         visit '/artists'
         expect(page).to have_content(artist_1.name)
         expect(page).to have_content(artist_2.name)
+        expect(page).to have_content(artist_1.created_at)
+        expect(page).to have_content(artist_2.created_at)
     end
 
     it 'Has a page Header' do 
