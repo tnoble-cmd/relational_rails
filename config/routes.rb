@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   get "/artists/new", to: "artists#new"
   post "/artists", to: "artists#create"
   get "/artists/:id", to: "artists#show"
+
   get "/songs", to: "songs#index"
   get "/songs/:id", to: "songs#show"
+  
   get "/artists/:id/songs", to: "artists#show_all"
 end

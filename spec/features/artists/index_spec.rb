@@ -30,7 +30,7 @@ RSpec.describe 'Artists Index Page' do
 
         visit '/artists'
 
-        expect(page.body.index(artist_3.name)).to be < page.body.index(artist_2.name)
-        expect(page.body.index(artist_2.name)).to be < page.body.index(artist_1.name)
+        expect(artist_3.name).to appear_before(artist_2.name)
+        expect(artist_2.name).to appear_before(artist_1.name)
     end
 end
