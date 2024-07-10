@@ -1,9 +1,11 @@
 
 <h1><%= @artists.name %></h1>
 
-<a href = "/songs">Songs Index</a>
-<a href = "/artists">Artist Index</a>
-<a href = "/artists/<%= @artists.id %>/songs">Songs by <%= @artists.name %></a>
+
+
+<%= link_to 'Songs Index', "/songs" %>
+<%= link_to 'Artist Index', "/artists" %>
+<%= link_to "Songs By #{@artists.name}", "/artists/#{@artists.id}/songs"%>
 
 <p>Still touring? : <%= @artists.is_touring %></p>
 <p>Total years active : <%= @artists.years_active %></p>
