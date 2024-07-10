@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "New Artist Form" do
-  
+
+    #User Story 11
     it "renders the new artist form" do
         visit "/artists"
 
@@ -18,12 +19,12 @@ RSpec.describe "New Artist Form" do
     
     it "creates a new artist" do
     visit "/artists/new"
-
+     
     fill_in "Name", with: "The Beatles"
     select "Yes", from: "Is Touring?"
     fill_in "Years Active:", with: 10
     click_on "Create Artist"
-
+       
     #after clicking submit, should be redirected to /artists
     expect(page).to have_current_path("/artists")
     expect(page).to have_content("The Beatles")

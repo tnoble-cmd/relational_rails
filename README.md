@@ -22,4 +22,5 @@
 
 * Database: "PostgreSQL"
 
-
+DB design.
+![alt text](image.png)

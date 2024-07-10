@@ -49,9 +49,9 @@ RSpec.describe 'Artists show' do
         song_1 = Song.create(name: "Enter Sandman", length: 310, is_single: false, artist_id: artist_1.id)
         song_3 = Song.create(name: "ONE", length: 405, is_single: false, artist_id: artist_1.id)
 
-        visit '/artists/1'
+        visit "/artists/#{artist_1.id}"
 
         expect(artist_1.songs.count).to eq(2)
-        expect(page).to have_content("Number of Songs: 2")
+        expect(page).to have_content("Total Songs : 2")
     end
 end
