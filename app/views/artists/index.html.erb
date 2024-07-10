@@ -1,7 +1,7 @@
 <h1>Artists Page</h1>
 
-<a href = "/songs">Songs Index</a>
-<a href = "/artists/new">Create New Artist</a>
+<%= link_to 'Songs Index', "/songs" %>
+<%= link_to 'Create New Artist', "/artists/new" %>
 
 <% @artists.each do |artist|%>
     <p><b>artist name :</b> <%= artist.name %> <b>Created:</b> <%= artist.created_at %></p>
