@@ -1,6 +1,6 @@
 <h1> All Songs </h1>
 
-<a href = "/artists">Artist Index</a>
+<%= link_to 'Artist Index', "/artists"%>
 
 <% @songs.each do |song| %>
   <h2>title : <%= song.name %></h2>

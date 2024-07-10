@@ -1,7 +1,7 @@
 <h1> <%= @songs.name %> </h1>
 
-<a href = "/songs">Songs Index</a>
-<a href = "/artists">Artist Index</a>
+<%= link_to 'Songs Index', "/songs" %>
+<%= link_to 'Artist Index', "/artists" %>
 
 <p>duration (in seconds) : <%=@songs.length %></p>
 <p>released as a single? : <%=@songs.is_single %></p>
