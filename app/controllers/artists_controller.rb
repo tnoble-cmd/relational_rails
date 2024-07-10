@@ -1,7 +1,8 @@
 class ArtistsController < ApplicationController
 
     def index
-        @artists = Artist.all.order(created_at: :desc)
+        # @artists = Artist.all.order(created_at: :desc)
+        @artists = Artist.recently_created
     end
 
     def show
