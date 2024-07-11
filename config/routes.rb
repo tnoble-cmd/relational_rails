@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :artists
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -8,13 +9,15 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  get "/artists", to: "artists#index"
-  get "/artists/new", to: "artists#new"
-  post "/artists", to: "artists#create"
-  get "/artists/:id", to: "artists#show"
+  # get "/artists", to: "artists#index"
+  # get "/artists/new", to: "artists#new"
+  # post "/artists", to: "artists#create"
+  # get "/artists/:id", to: "artists#show"
+  # get "/artists/:id/edit", to: "artists#edit"
+  # patch "/artists/:id", to: "artists#update"
 
   get "/songs", to: "songs#index"
   get "/songs/:id", to: "songs#show"
-  
+
   get "/artists/:id/songs", to: "artists#show_all"
 end
