@@ -15,15 +15,29 @@ class ArtistsController < ApplicationController
     end
 
     def new
-        
+        @artist = Artist.new
     end
 
     def create
-        @artists = Artist.create(artist_params)
+        @artist = Artist.new(artist_params)
+        if @artist.save
+          redirect_to artists_path, notice: 'Artist was successfully created.'
+        else
+          render :new
+        end
+    end
 
-        @artists.save
-        
-        redirect_to "/artists"
+    def edit
+        @artist = Artist.find(params[:id])
+    end
+    
+    def update
+        @artist = Artist.find(params[:id])
+        if @artist.update(artist_params)
+          redirect_to @artist, notice: 'Artist was successfully updated.'
+        else
+          render :edit
+        end
     end
 
     private
