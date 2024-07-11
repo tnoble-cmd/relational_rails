@@ -2,7 +2,7 @@
 <h1><%= @artists.name %></h1>
 
 
-
+<%= link_to 'Edit Artist', "/artists/#{@artists.id}/edit"%>
 <%= link_to 'Songs Index', "/songs" %>
 <%= link_to 'Artist Index', "/artists" %>
 <%= link_to "Songs By #{@artists.name}", "/artists/#{@artists.id}/songs"%>

@@ -1,14 +1,22 @@
 <h1>Add a new artist</h1>
 
-<%=form_with url: "/artists", method: :post, data: {turbo: false } do |form| %>
+<%= form_with model: @artist, local: true do |form| %>
+  <div>
     <%= form.label :name, "Artist Name:" %>
-    <%= form.text_field :name%>
+    <%= form.text_field :name %>
+  </div>
 
+  <div>
     <%= form.label :is_touring, "Is Touring?" %>
-    <%= form.select :is_touring, [["Yes", true], ["No", false]] %> 
+    <%= form.select :is_touring, [["Yes", true], ["No", false]] %>
+  </div>
 
+  <div>
     <%= form.label :years_active, "Years Active:" %>
     <%= form.number_field :years_active %>
-    
+  </div>
+
+  <div>
     <%= form.submit "Create Artist" %>
+  </div>
 <% end %>

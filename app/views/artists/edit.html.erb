@@ -1,0 +1,14 @@
+<h1>Edit Artist</h1>
+
+<%= form_with model: @artist, local: true do |form| %>
+    <%= form.label :name, "Artist Name:" %>
+    <%= form.text_field :name%>
+    
+    <%= form.label :is_touring, "Is Touring?" %>
+    <%= form.select :is_touring, [["Yes", true], ["No", false]] %> 
+    
+    <%= form.label :years_active, "Years Active:" %>
+    <%= form.number_field :years_active %> 
+    
+    <%= form.submit "Update Artist" %>
+<% end %>
